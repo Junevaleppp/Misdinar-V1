@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Misdinar Santo Bartolomeus – Admin Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="logo-misdinar-barto.png" alt="Logo" class="brand-logo-img" />
+        <div class="brand-text">
+          <span class="brand-title">MISDINAR SANTO BARTOLOMEUS</span>
+          <span class="brand-subtitle">Est es Servire • Paroki Taman Galaxy</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a href="duties.html">Daftar Tugas</a>
+        <a href="login.html">Login</a>
+      </nav>
+      <button class="nav-toggle">☰</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <div id="admin-forbidden" style="text-align:center; display:none; padding:2rem;"></div>
+
+    <section id="admin-logged-section" style="display:none;">
+      <div class="admin-layout">
+        <aside class="admin-sidebar">
+          <h3>Admin Panel</h3>
+          <p style="font-size:0.84rem;margin:0 0 1rem;">
+            Halo, <strong id="admin-name"></strong>
+          </p>
+          <div class="admin-nav">
+            <button data-admin-tab="dashboard" class="active">Dashboard</button>
+            <button data-admin-tab="members">Akun Anggota</button>
+            <button data-admin-tab="history">Riwayat Tugas</button>
+            <button data-admin-tab="overview">Rekap Pelayanan</button>
+            <button data-admin-tab="activity">Activity Log</button>
+          </div>
+        </aside>
+
+        <section class="admin-main">
+          <div data-admin-view="dashboard">
+            <h2>Dashboard</h2>
+            <div class="stats-row">
+              <div class="stat-card"><strong id="stat-total-members">0</strong><span>Total Anggota</span></div>
+              <div class="stat-card"><strong id="stat-total-month">0</strong><span>Tugas Bulan Ini</span></div>
+              <div class="stat-card"><strong id="stat-total-canceled">0</strong><span>Batal Bulan Ini</span></div>
+            </div>
+
+            <div style="margin-top:1.4rem;">
+              <h3 style="margin:0 0 0.4rem;font-size:1rem;">Buat Akun Baru</h3>
+              <form id="create-member-form" style="max-width:420px;">
+                <label>Nama Lengkap <input type="text" id="new-fullname" required /></label>
+                <label>Username <input type="text" id="new-username" required /></label>
+                <label>Angkatan <input type="number" id="new-angkatan" placeholder="Contoh: 2023" required /></label>
+                <label>Password <input type="password" id="new-password" required /></label>
+                
+                <label>
+                   Role Akun
+                   <select id="new-role" required>
+                      <option value="anggota">Anggota Biasa</option>
+                      <option value="pengurus">Pengurus (Admin)</option>
+                   </select>
+                </label>
+                
+                <button type="submit" class="btn-primary">Buat Akun</button>
+              </form>
+            </div>
+          </div>
+
+          <div data-admin-view="members" style="display:none;">
+            <h2>Manajemen Akun</h2>
+            <table class="admin-table">
+              <thead><tr><th>Nama</th><th>Role</th><th>Username</th><th>Total Tugas</th><th>Aksi</th></tr></thead>
+              <tbody id="members-body"></tbody>
+            </table>
+          </div>
+
+          <div data-admin-view="history" style="display:none;">
+            <h2>Riwayat Tugas</h2>
+            <button class="btn-sm btn-primary" onclick="exportHistoryCsv()">Export CSV</button>
+            <table class="admin-table" style="margin-top:0.6rem;">
+              <thead><tr><th>Tgl</th><th>Misa</th><th>Nama</th><th>Status</th><th>Waktu</th></tr></thead>
+              <tbody id="history-body"></tbody>
+            </table>
+          </div>
+
+          <div data-admin-view="overview" style="display:none;">
+            <h2>Rekap Pelayanan</h2>
+            <table class="admin-table">
+              <thead><tr><th>Nama</th><th>Angkatan</th><th>Role</th><th>Total</th></tr></thead>
+              <tbody id="overview-body"></tbody>
+            </table>
+          </div>
+
+          <div data-admin-view="activity" style="display:none;">
+            <h2>Activity Log</h2>
+            <table class="admin-table">
+              <thead><tr><th>Waktu</th><th>Jenis</th><th>Aktor</th><th>Deskripsi</th></tr></thead>
+              <tbody id="activity-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span class="year-now"></span> Misdinar Santo Bartolomeus. All rights reserved.</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</body>
+</html>

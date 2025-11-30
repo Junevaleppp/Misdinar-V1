@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Misdinar Santo Bartolomeus – Jadwal Tugas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="logo-misdinar-barto.png" alt="Logo Misdinar Santo Bartolomeus" class="brand-logo-img" />
+        <div class="brand-text">
+          <span class="brand-title">MISDINAR SANTO BARTOLOMEUS</span>
+          <span class="brand-subtitle">Est es Servire • Paroki Taman Galaxy</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a href="council.html">Pengurus</a>
+        <a href="history.html">Sejarah</a>
+        <a href="gallery.html">Galeri Foto</a>
+        <a href="schedule.html" class="active">Jadwal</a>
+        <a href="duties.html">Daftar Tugas</a>
+        <a href="login.html">Login</a>
+      </nav>
+      <div class="nav-social">
+        <a href="https://www.instagram.com/misdinar_barto" target="_blank" rel="noopener">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section>
+      <div class="section-header">
+        <h1>Jadwal Tugas Misdinar</h1>
+        <p>Jadwal pelayanan Sabtu dan Minggu (maksimal 8 misdinar per Misa).</p>
+      </div>
+
+      <div class="schedule-box">
+  <div class="schedule-controls" style="margin-bottom: 1rem; display:flex; gap:1rem; align-items:center;">
+      <label>Pilih Bulan: <input type="month" id="schedule-month-picker" /></label>
+      <button onclick="loadScheduleTable()" class="btn-sm btn-primary">Lihat</button>
+  </div>
+  
+  <div id="schedule-container" class="schedule-grid-wrapper">
+     <p>Memuat jadwal...</p>
+  </div>
+</div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span class="year-now"></span> Misdinar Santo Bartolomeus. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</body>
+</html>

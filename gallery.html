@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Misdinar Santo Bartolomeus – Galeri Foto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="logo-misdinar-barto.png" alt="Logo Misdinar Santo Bartolomeus" class="brand-logo-img" />
+        <div class="brand-text">
+          <span class="brand-title">MISDINAR SANTO BARTOLOMEUS</span>
+          <span class="brand-subtitle">Est es Servire • Paroki Taman Galaxy</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a href="council.html">Pengurus</a>
+        <a href="history.html">Sejarah</a>
+        <a href="gallery.html" class="active">Galeri Foto</a>
+        <a href="schedule.html">Jadwal</a>
+        <a href="duties.html">Daftar Tugas</a>
+        <a href="login.html">Login</a>
+        <a href="admin.html">Admin Panel</a>
+      </nav>
+      <div class="nav-social">
+        <a href="https://www.instagram.com/misdinar_barto" target="_blank" rel="noopener">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section>
+      <div class="section-header">
+        <h1>Galeri Foto Kegiatan</h1>
+        <p>Daftar album Google Drive untuk berbagai kegiatan Misdinar Santo Bartolomeus.</p>
+      </div>
+
+      <p class="gallery-intro">
+        Setiap kartu di bawah ini mengarah ke folder atau album Google Drive terpisah.
+        Admin dapat menambahkan album baru dengan menyalin salah satu kartu dan
+        mengganti judul serta tautannya.
+      </p>
+
+      <div class="gallery-grid">
+        <article class="card">
+          <h3 class="gallery-item-title">Album Umum Misdinar</h3>
+          <p class="gallery-item-meta">Dokumentasi berbagai pelayanan dan kebersamaan misdinar.</p>
+          <a class="btn-primary"
+            href="https://drive.google.com/drive/folders/1QmJC__6Hd6bTbgg60XPpNRqD0qzZebfZ"
+            target="_blank" rel="noopener">
+            Buka Album
+          </a>
+        </article>
+
+        <article class="card">
+          <h3 class="gallery-item-title">Perayaan Paskah</h3>
+          <p class="gallery-item-meta">Vigili Paskah, Misa Paskah, dan prosesi khusus. (Ganti link sesuai album)</p>
+          <a class="btn-ghost" href="https://drive.google.com" target="_blank" rel="noopener">
+            Buka Album
+          </a>
+        </article>
+
+        <article class="card">
+          <h3 class="gallery-item-title">Natal & Tahun Baru</h3>
+          <p class="gallery-item-meta">Dekorasi altar, Misa Natal, dan Tahun Baru.</p>
+          <a class="btn-ghost" href="https://drive.google.com" target="_blank" rel="noopener">
+            Buka Album
+          </a>
+        </article>
+
+        <article class="card">
+          <h3 class="gallery-item-title">Rekoleksi & Pembinaan</h3>
+          <p class="gallery-item-meta">Rekoleksi, retret, sesi pembinaan iman dan karakter.</p>
+          <a class="btn-ghost" href="https://drive.google.com" target="_blank" rel="noopener">
+            Buka Album
+          </a>
+        </article>
+
+        <!-- Tambahkan kartu-kartu baru jika ada album lain -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span class="year-now"></span> Misdinar Santo Bartolomeus. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</body>
+</html>

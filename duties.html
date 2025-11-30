@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Misdinar Santo Bartolomeus – Daftar Tugas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="logo-misdinar-barto.png" alt="Logo" class="brand-logo-img" />
+        <div class="brand-text">
+          <span class="brand-title">MISDINAR SANTO BARTOLOMEUS</span>
+          <span class="brand-subtitle">Est es Servire • Paroki Taman Galaxy</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a href="duties.html" class="active">Daftar Tugas</a>
+        <a href="login.html">Login</a>
+      </nav>
+      <button class="nav-toggle">☰</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <div id="duty-locked-message" style="text-align:center; padding: 3rem 1rem;">
+      <h2>Silakan Login Terlebih Dahulu</h2>
+      <p>Anda harus masuk sebagai anggota untuk mendaftar tugas.</p>
+      <a href="login.html" class="btn-primary" style="margin-top:1rem;">Ke Halaman Login</a>
+    </div>
+
+    <section class="duty-layout" style="display:none;">
+      <div class="duty-panel">
+        <h2>Pendaftaran Tugas</h2>
+        <p id="duty-user-info" style="font-weight:600; color:var(--primary);"></p>
+
+        <form id="duty-form">
+          <label>
+            Tanggal Misa
+            <input type="date" id="duty-date" required />
+          </label>
+          <label>
+            Jam Misa
+            <select id="mass-time-select" required></select>
+          </label>
+          <button type="submit" class="btn-primary">Daftar Tugas</button>
+          <div id="duty-message" class="form-message"></div>
+        </form>
+      </div>
+
+      <div>
+        <div class="table-box">
+          <h3>Riwayat Tugas Saya</h3>
+          <p style="font-size:0.86rem;">Total: <strong id="history-total-count">0</strong></p>
+          
+          <h4 style="margin:0.5rem 0 0.3rem;font-size:0.9rem;">Mendatang</h4>
+          <table>
+            <thead><tr><th>Tgl</th><th>Jam</th><th>Sts</th><th>Aksi</th></tr></thead>
+            <tbody id="upcoming-body"></tbody>
+          </table>
+
+          <h4 style="margin:0.9rem 0 0.3rem;font-size:0.9rem;">Lampau</h4>
+          <table>
+            <thead><tr><th>Tgl</th><th>Jam</th><th>Sts</th><th></th></tr></thead>
+            <tbody id="past-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span class="year-now"></span> Misdinar Santo Bartolomeus. All rights reserved.</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</body>
+</html>

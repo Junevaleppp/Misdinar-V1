@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Misdinar Santo Bartolomeus – Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="logo-misdinar-barto.png" alt="Logo" class="brand-logo-img" />
+        <div class="brand-text">
+          <span class="brand-title">MISDINAR SANTO BARTOLOMEUS</span>
+          <span class="brand-subtitle">Est es Servire • Paroki Taman Galaxy</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a href="duties.html">Daftar Tugas</a>
+        <a href="login.html" class="active">Login</a>
+      </nav>
+      <button class="nav-toggle">☰</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="form-card">
+      <h2>Login Misdinar</h2>
+      <p>Silakan masuk menggunakan akun anggota atau pengurus.</p>
+      
+      <form id="user-login-form">
+        <label>
+          Username
+          <input type="text" id="login-username" required />
+        </label>
+        <label>
+          Password
+          <input type="password" id="login-password" required />
+        </label>
+        <button type="submit" class="btn-primary">Masuk</button>
+        <div id="user-login-message" class="form-message"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span class="year-now"></span> Misdinar Santo Bartolomeus. All rights reserved.</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</body>
+</html>
